@@ -28,7 +28,7 @@ export class StudentTableComponent implements OnInit {
   editStudent(id){
     const navigationExtras: NavigationExtras = {
       state: {
-        id : id
+        id : id,
       }
     };
     this.router.navigate(['editStudent'], navigationExtras )
