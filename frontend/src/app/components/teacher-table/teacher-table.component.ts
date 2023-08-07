@@ -28,7 +28,7 @@ export class TeacherTableComponent implements OnInit {
   editTeacher(id) {
     const navigationExtras: NavigationExtras = {
       state: {
-        id: id,
+        id: id
       }
     };
     this.router.navigate(['editTeacher'], navigationExtras)
@@ -60,15 +60,6 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  deleteTeacher(itemid) {
-    const test = {
-      id: itemid
-    }
-    this.service.deleteTeacher(test).subscribe((response) => {
-      this.getTeacherData()
-    })
-  }
-
   search(value) {
     let foundItems = [];
     if (value.length <= 0) {
@@ -81,5 +72,14 @@ export class TeacherTableComponent implements OnInit {
       });
       this.teacherData = foundItems;
     }
+  }
+
+  deleteTeacher(itemid) {
+    const test = {
+      id: itemid
+    }
+    this.service.deleteTeacher(test).subscribe((response) => {
+      this.getTeacherData()
+    })
   }
 }
