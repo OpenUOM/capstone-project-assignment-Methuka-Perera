@@ -28,7 +28,7 @@ export class TeacherTableComponent implements OnInit {
   editTeacher(id) {
     const navigationExtras: NavigationExtras = {
       state: {
-        id: id
+        id: id,
       }
     };
     this.router.navigate(['editTeacher'], navigationExtras)
