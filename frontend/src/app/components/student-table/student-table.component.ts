@@ -28,7 +28,7 @@ export class StudentTableComponent implements OnInit {
   editStudent(id){
     const navigationExtras: NavigationExtras = {
       state: {
-        id : id,
+        id : id
       }
     };
     this.router.navigate(['editStudent'], navigationExtras )
@@ -57,7 +57,7 @@ export class StudentTableComponent implements OnInit {
       this.getStudentData();
     } else {
       let b = this.studentData.filter((student) => {
-        if (student[0].name.toLowerCase().includes(value.toLowerCase())) {
+        if (student[0].name.toLowerCase().index(value)) {
           foundItems.push(student)
         }
       });

@@ -66,7 +66,7 @@ export class TeacherTableComponent implements OnInit {
       this.getTeacherData();
     } else {
       let b = this.teacherData.filter((teacher) => {
-        if (teacher[0].name.toLowerCase().includes(value.toLowerCase())) {
+        if (teacher[0].name.toLowerCase().index(value)) {
           foundItems.push(teacher)
         }
       });
